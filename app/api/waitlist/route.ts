@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Airtable from 'airtable'
+
+// Force Node.js runtime for Airtable compatibility on Vercel
+export const runtime = 'nodejs'
 
 export async function POST(request: NextRequest) {
   try {
@@ -40,6 +42,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Dynamic import for Airtable to ensure compatibility with Vercel
+    const Airtable = (await import('airtable')).default
+    
     // Initialize Airtable
     const base = new Airtable({
       apiKey: process.env.AIRTABLE_ACCESS_TOKEN,
@@ -81,16 +86,42 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     )
   } catch (error: any) {
-    console.error('Error processing waitlist submission:', {
+    // Log detailed error information
+    const errorInfo = {
       message: error?.message,
       statusCode: error?.statusCode,
       errorDetails: error?.error,
-      stack: error?.stack,
-    })
+      type: error?.constructor?.name,
+      name: error?.name,
+    }
     
-    // Return more detailed error message in development
-    const errorMessage = process.env.NODE_ENV === 'development' 
-      ? `Failed to process submission: ${error?.message || 'Unknown error'}`
+    console.error('Error processing waitlist submission:', errorInfo)
+    
+    // Handle specific Airtable errors
+    if (error?.statusCode === 401) {
+      return NextResponse.json(
+        { error: 'Invalid Airtable API credentials' },
+        { status: 500 }
+      )
+    }
+    
+    if (error?.statusCode === 404) {
+      return NextResponse.json(
+        { error: 'Airtable base or table not found. Please check your configuration.' },
+        { status: 500 }
+      )
+    }
+    
+    if (error?.statusCode === 422) {
+      return NextResponse.json(
+        { error: 'Invalid data format. Please check field names in Airtable.' },
+        { status: 500 }
+      )
+    }
+    
+    // Return error message - include details in production for debugging
+    const errorMessage = error?.message 
+      ? `Failed to process submission: ${error.message}`
       : 'Failed to process submission. Please try again later.'
     
     return NextResponse.json(
