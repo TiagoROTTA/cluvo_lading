@@ -42,9 +42,7 @@ export default function PipelineTimeline() {
     <div className="w-full flex flex-col items-center py-20">
       <div className="w-full max-w-[960px] px-6 pb-12 relative">
         {/* Vertical timeline line - desktop */}
-        <div className="absolute left-[39px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-200 dark:bg-gray-700 -ml-[1px] hidden md:block z-0"></div>
-        {/* Vertical timeline line - mobile */}
-        <div className="absolute left-10 top-0 bottom-0 w-[2px] bg-gray-200 dark:bg-gray-700 md:hidden z-0"></div>
+        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gray-200 dark:bg-gray-700 -ml-[1px] hidden md:block z-0"></div>
 
         {/* Step 1: Dump Your Data */}
         <div 
@@ -60,8 +58,15 @@ export default function PipelineTimeline() {
             <span className="text-sm font-bold text-deep-jungle dark:text-white">1</span>
           </div>
           
+          {/* Mobile number badge */}
+          <div className={`md:hidden absolute left-[40px] -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
+            visibleSteps.includes(0) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
+          }`}>
+            <span className="text-xs font-bold text-deep-jungle dark:text-white">1</span>
+          </div>
+          
           {/* Text content */}
-          <div className="flex-1 md:text-right pt-2 pl-12 md:pl-0 md:pr-12 order-2 md:order-1">
+          <div className="flex-1 md:text-right pt-2 pl-16 md:pl-0 md:pr-12 order-2 md:order-1 w-full md:w-auto">
             <h2 className="font-mono font-bold text-3xl mb-3 text-deep-jungle dark:text-white">Dump Your Data</h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">Upload raw interviews, messy notes, or scattered customer feedback. We accept all formats, from audio files to scribbles.</p>
             <div className="flex flex-wrap gap-2 md:justify-end">
@@ -72,7 +77,7 @@ export default function PipelineTimeline() {
           </div>
           
           {/* Visual content */}
-          <div className="flex-1 pl-12 md:pl-12 order-3 md:order-2 w-full">
+          <div className="flex-1 pl-16 md:pl-12 order-3 md:order-2 w-full">
             <div className="border-2 border-dashed border-primary/40 bg-emerald-50/30 dark:bg-emerald-900/10 rounded-xl p-8 flex flex-col items-center justify-center text-center min-h-[240px]">
               <div className="size-16 bg-white dark:bg-card-dark rounded-full shadow-md flex items-center justify-center mb-4 text-primary">
                 <span className="material-symbols-outlined text-4xl">cloud_upload</span>
@@ -80,13 +85,6 @@ export default function PipelineTimeline() {
               <h3 className="font-bold text-lg mb-1 text-deep-jungle dark:text-white">Drag &amp; Drop Files</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">or browse your computer</p>
             </div>
-          </div>
-          
-          {/* Mobile number badge */}
-          <div className={`md:hidden absolute left-10 -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
-            visibleSteps.includes(0) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
-          }`}>
-            <span className="text-xs font-bold text-deep-jungle dark:text-white">1</span>
           </div>
         </div>
 
@@ -104,8 +102,15 @@ export default function PipelineTimeline() {
             <span className="text-sm font-bold text-deep-jungle dark:text-white">2</span>
           </div>
           
+          {/* Mobile number badge */}
+          <div className={`md:hidden absolute left-[40px] -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
+            visibleSteps.includes(1) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
+          }`}>
+            <span className="text-xs font-bold text-deep-jungle dark:text-white">2</span>
+          </div>
+          
           {/* Visual content */}
-          <div className="flex-1 pl-12 md:pl-0 md:pr-12 w-full order-3 md:order-1">
+          <div className="flex-1 pl-16 md:pl-0 md:pr-12 w-full order-3 md:order-1">
             <div className="bg-white dark:bg-[#0B2D26] border border-gray-100 dark:border-gray-700 shadow-xl rounded-xl p-6 relative overflow-hidden">
               <div className="flex flex-col items-center gap-2">
                 <div className="flex gap-2 w-full justify-center flex-wrap opacity-50">
@@ -129,7 +134,7 @@ export default function PipelineTimeline() {
           </div>
           
           {/* Text content */}
-          <div className="flex-1 pt-2 pl-12 md:pl-12 order-2 md:order-2">
+          <div className="flex-1 pt-2 pl-16 md:pl-12 order-2 md:order-2 w-full md:w-auto">
             <h2 className="font-mono font-bold text-3xl mb-3 text-deep-jungle dark:text-white">The Noise Filter</h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">We automatically separate polite compliments from brutal honesty. &apos;Nice to haves&apos; get filtered out. &apos;Must haves&apos; get pushed through.</p>
             <ul className="space-y-3">
@@ -143,19 +148,12 @@ export default function PipelineTimeline() {
               </li>
             </ul>
           </div>
-          
-          {/* Mobile number badge */}
-          <div className={`md:hidden absolute left-10 -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
-            visibleSteps.includes(1) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
-          }`}>
-            <span className="text-xs font-bold text-deep-jungle dark:text-white">2</span>
-          </div>
         </div>
 
         {/* Step 3: The Sort */}
         <div 
           ref={(el) => { stepRefs.current[2] = el }}
-          className={`relative z-10 flex flex-col md:flex-row gap-8 md:gap-16 mb-24 items-start group transition-all duration-700 ${
+          className={`relative z-10 flex flex-col md:flex-row gap-4 md:gap-16 mb-24 items-start group transition-all duration-700 ${
             visibleSteps.includes(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -166,14 +164,21 @@ export default function PipelineTimeline() {
             <span className="text-sm font-bold text-deep-jungle dark:text-white">3</span>
           </div>
           
+          {/* Mobile number badge */}
+          <div className={`md:hidden absolute left-[40px] -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
+            visibleSteps.includes(2) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
+          }`}>
+            <span className="text-xs font-bold text-deep-jungle dark:text-white">3</span>
+          </div>
+          
           {/* Text content */}
-          <div className="flex-1 md:text-right pt-2 pl-12 md:pl-0 md:pr-12 order-2 md:order-1">
+          <div className="flex-1 md:text-right pt-2 pl-16 md:pl-0 md:pr-12 order-2 md:order-1 w-full md:w-auto">
             <h2 className="font-mono font-bold text-3xl mb-3 text-deep-jungle dark:text-white">The Sort</h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">Actionable data is sorted into two distinct buckets. Know exactly what to build and what to scrap immediately.</p>
           </div>
           
           {/* Visual content */}
-          <div className="flex-1 pl-12 md:pl-12 order-3 md:order-2 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex-1 pl-16 md:pl-12 order-3 md:order-2 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Ignore List */}
             <div className="bg-gray-50 dark:bg-[#0B2D26] border border-gray-100 dark:border-gray-700 rounded-xl p-4">
               <div className="flex items-center gap-2 mb-4 border-b border-gray-200 dark:border-gray-600 pb-2">
@@ -215,19 +220,12 @@ export default function PipelineTimeline() {
               </ul>
             </div>
           </div>
-          
-          {/* Mobile number badge */}
-          <div className={`md:hidden absolute left-10 -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
-            visibleSteps.includes(2) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
-          }`}>
-            <span className="text-xs font-bold text-deep-jungle dark:text-white">3</span>
-          </div>
         </div>
 
         {/* Step 4: The Translation */}
         <div 
           ref={(el) => { stepRefs.current[3] = el }}
-          className={`relative z-10 flex flex-col md:flex-row gap-8 md:gap-16 mb-24 items-start group transition-all duration-700 ${
+          className={`relative z-10 flex flex-col md:flex-row gap-4 md:gap-16 mb-24 items-start group transition-all duration-700 ${
             visibleSteps.includes(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -238,8 +236,15 @@ export default function PipelineTimeline() {
             <span className="text-sm font-bold text-deep-jungle dark:text-white">4</span>
           </div>
           
+          {/* Mobile number badge */}
+          <div className={`md:hidden absolute left-[40px] -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
+            visibleSteps.includes(3) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
+          }`}>
+            <span className="text-xs font-bold text-deep-jungle dark:text-white">4</span>
+          </div>
+          
           {/* Visual content */}
-          <div className="flex-1 pl-12 md:pl-0 md:pr-12 w-full order-3 md:order-1">
+          <div className="flex-1 pl-16 md:pl-0 md:pr-12 w-full order-3 md:order-1">
             <div className="bg-white dark:bg-[#0B2D26] border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-lg flex flex-col max-w-sm mx-auto md:ml-auto md:mr-0">
               <div className="bg-gray-50 dark:bg-black/20 px-4 py-2 border-b border-gray-100 dark:border-gray-700 flex items-center gap-2">
                 <div className="flex gap-1">
@@ -278,23 +283,16 @@ export default function PipelineTimeline() {
           </div>
           
           {/* Text content */}
-          <div className="flex-1 pt-2 pl-12 md:pl-12 order-2 md:order-2">
+          <div className="flex-1 pt-2 pl-16 md:pl-12 order-2 md:order-2 w-full md:w-auto">
             <h2 className="font-mono font-bold text-3xl mb-3 text-deep-jungle dark:text-white">The Translation</h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">Humans are notoriously bad at telling the truth. Our engine translates polite feedback into raw business reality.</p>
-          </div>
-          
-          {/* Mobile number badge */}
-          <div className={`md:hidden absolute left-10 -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
-            visibleSteps.includes(3) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
-          }`}>
-            <span className="text-xs font-bold text-deep-jungle dark:text-white">4</span>
           </div>
         </div>
 
         {/* Step 5: Share with Investors */}
         <div 
           ref={(el) => { stepRefs.current[4] = el }}
-          className={`relative z-10 flex flex-col md:flex-row gap-8 md:gap-16 items-start group transition-all duration-700 ${
+          className={`relative z-10 flex flex-col md:flex-row gap-4 md:gap-16 items-start group transition-all duration-700 ${
             visibleSteps.includes(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -305,14 +303,21 @@ export default function PipelineTimeline() {
             <span className="text-sm font-bold text-deep-jungle dark:text-white">5</span>
           </div>
           
+          {/* Mobile number badge */}
+          <div className={`md:hidden absolute left-[40px] -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
+            visibleSteps.includes(4) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
+          }`}>
+            <span className="text-xs font-bold text-deep-jungle dark:text-white">5</span>
+          </div>
+          
           {/* Text content */}
-          <div className="flex-1 md:text-right pt-2 pl-12 md:pl-0 md:pr-12 order-2 md:order-1">
+          <div className="flex-1 md:text-right pt-2 pl-16 md:pl-0 md:pr-12 order-2 md:order-1 w-full md:w-auto">
             <h2 className="font-mono font-bold text-3xl mb-3 text-deep-jungle dark:text-white">Share with Investors</h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">Export your findings into a clean, data-backed report. Prove your market demand to investors with a single, un-biased source of truth.</p>
           </div>
           
           {/* Visual content */}
-          <div className="flex-1 pl-12 md:pl-12 w-full order-3 md:order-2">
+          <div className="flex-1 pl-16 md:pl-12 w-full order-3 md:order-2">
             <div className="bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-lg p-8 relative flex items-center justify-center min-h-[260px] group-hover:border-primary/30 transition-colors duration-300">
               <div className="absolute inset-0 bg-gray-50/50 dark:bg-black/20"></div>
               <div className="relative z-10 w-44 bg-white dark:bg-card-dark border border-gray-100 dark:border-gray-700 shadow-xl rounded-lg p-5 flex flex-col gap-3 transform group-hover:-rotate-1 transition-transform duration-500">
@@ -348,13 +353,6 @@ export default function PipelineTimeline() {
                 </div>
               </div>
             </div>
-          </div>
-          
-          {/* Mobile number badge */}
-          <div className={`md:hidden absolute left-10 -translate-x-1/2 top-0 size-8 bg-white dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
-            visibleSteps.includes(4) ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
-          }`}>
-            <span className="text-xs font-bold text-deep-jungle dark:text-white">5</span>
           </div>
         </div>
       </div>

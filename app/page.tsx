@@ -59,8 +59,8 @@ export default function Home() {
   return (
     <>
       {/* Navigation */}
-      <nav className="w-full py-6 px-4 sm:px-8 max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center">
+      <nav className="w-full py-6 px-4 sm:px-8 max-w-7xl mx-auto flex items-center justify-center md:justify-between">
+        <div className="flex items-center justify-center md:justify-start">
           <Image 
             src="/logo.png" 
             alt="CLUVO Logo" 
@@ -74,7 +74,7 @@ export default function Home() {
           <a className="hover:text-primary transition-colors" href="#features" onClick={(e) => handleScrollToSection(e, 'features')}>Features</a>
           <a className="hover:text-primary transition-colors" href="#coming-soon" onClick={(e) => handleScrollToSection(e, 'coming-soon')}>Coming Soon</a>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6">
           <a className="bg-primary hover:bg-primary-dark text-white dark:text-deep-jungle font-mono font-bold text-sm px-6 py-3 rounded shadow-lg hover:shadow-glow transition-all flex items-center gap-2" href="#waitlist" onClick={handleScrollToWaitlist}>
             Join the Waiting List
           </a>
@@ -94,7 +94,7 @@ export default function Home() {
                 <svg className="absolute w-full h-[15px] -bottom-2 left-0 text-soft-coral z-10" preserveAspectRatio="none" viewBox="0 0 200 12">
                   <path d="M0 6c2.65 0 3.853 2.706 4.914 5.094C5.962 9.453 6.744 11 8 11c1.412 0 2.537-2.026 3.626-3.986C12.996 4.549 14.412 2 17 2c2.589 0 4.005 2.549 5.374 5.014C23.463 8.974 24.589 11 26 11c1.256 0 2.037-1.547 3.086-3.906C30.147 4.706 31.351 2 34 2c2.65 0 3.853 2.706 4.914 5.094C39.962 9.453 40.744 11 42 11c1.412 0 2.537-2.026 3.626-3.986C46.996 4.549 48.412 2 51 2c2.589 0 4.005 2.549 5.374 5.014C57.463 8.974 58.589 11 60 11c1.256 0 2.037-1.547 3.086-3.906C64.147 4.706 65.351 2 68 2c2.65 0 3.853 2.706 4.914 5.094C73.962 9.453 74.744 11 76 11c1.412 0 2.537-2.026 3.626-3.986C80.996 4.549 82.412 2 85 2c2.589 0 4.005 2.549 5.374 5.014C91.463 8.974 92.589 11 94 11c1.256 0 2.037-1.547 3.086-3.906C98.147 4.706 99.351 2 102 2c2.65 0 3.853 2.706 4.914 5.094C107.962 9.453 108.744 11 110 11c1.412 0 2.537-2.026 3.626-3.986C114.996 4.549 116.412 2 119 2c2.589 0 4.005 2.549 5.374 5.014C125.463 8.974 126.589 11 128 11c1.256 0 2.037-1.547 3.086-3.906C132.147 4.706 133.351 2 136 2c2.65 0 3.853 2.706 4.914 5.094C141.962 9.453 142.744 11 144 11c1.412 0 2.537-2.026 3.626-3.986C148.996 4.549 150.412 2 153 2c2.589 0 4.005 2.549 5.374 5.014C159.463 8.974 160.589 11 162 11c1.256 0 2.037-1.547 3.086-3.906C166.147 4.706 167.351 2 170 2c2.65 0 3.853 2.706 4.914 5.094C175.962 9.453 176.744 11 178 11c1.412 0 2.537-2.026 3.626-3.986C182.996 4.549 184.412 2 187 2c2.589 0 4.005 2.549 5.374 5.014C193.463 8.974 194.589 11 196 11c1.256 0 2.037-1.547 3.086-3.906C200.147 4.706 200 6 200 6" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
                 </svg>
-              </span>. <br/>
+              </span> <br/>
                <span className="text-primary">Prove Demand.</span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-lg">
@@ -410,7 +410,7 @@ export default function Home() {
             />
           </div>
           <div className="font-mono text-[10px] text-gray-400">
-            © 2026 CLUVO Inc. All systems normal.
+            © 2026 CLUVO Inc.
           </div>
         </div>
       </footer>
