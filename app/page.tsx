@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import PipelineTimeline from '@/components/PipelineTimeline'
 
 export default function Home() {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -231,70 +232,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-emerald-50/30 dark:bg-emerald-900/10 py-20 px-4 sm:px-8" id="features">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="font-mono font-bold text-3xl sm:text-4xl text-deep-jungle dark:text-white mb-4">
-              Rigorous Validation Tools
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-xl">
-              The engine that makes sure you never build for <strong>&quot;polite lies&quot;</strong> again.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-card-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
-              <div className="w-10 h-10 rounded border border-primary text-primary bg-white dark:bg-card-dark flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined">psychology_alt</span>
-              </div>
-              <h3 className="font-bold text-lg text-deep-jungle dark:text-white mb-3">The Mom Test Guardrails</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-                AI detects when you are pitching instead of listening. It flags leading questions and speculative &quot;future&quot; answers instantly.
-              </p>
-              <div className="bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/30 p-3 rounded text-[10px] text-red-500 flex gap-2 items-center">
-                <span className="material-symbols-outlined text-sm">warning</span>
-                <span>Warning: &quot;Would you use...&quot; is speculative. Flagged.</span>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-card-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
-              <div className="w-10 h-10 rounded border border-primary text-primary flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined">lock_person</span>
-              </div>
-              <h3 className="font-bold text-lg text-deep-jungle dark:text-white mb-3">Evidence Locker</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-                Force yourself to be honest. Hypothesis cards stay &apos;Unverified&apos; until you tag specific timestamps from your interview videos as proof.
-              </p>
-              <div className="flex gap-2">
-                <div className="h-12 flex-1 bg-gray-100 dark:bg-gray-700 rounded flex items-center justify-center">
-                  <span className="material-symbols-outlined text-xs text-gray-400">check_circle</span>
-                </div>
-                <div className="h-12 flex-1 bg-gray-100 dark:bg-gray-700 border border-dashed border-primary/50 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-xs text-primary">add</span>
-                </div>
-                <div className="h-12 flex-1 bg-gray-50 dark:bg-gray-800 rounded flex items-center justify-center">
-                  <span className="material-symbols-outlined text-xs text-gray-300">lock</span>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-card-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
-              <div className="w-10 h-10 rounded border border-primary text-primary flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined">visibility</span>
-              </div>
-              <h3 className="font-bold text-lg text-deep-jungle dark:text-white mb-3">Investor Guest View</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-                Stop writing decks that investors ignore. Share a link to your Evidence Locker so they can see the demand for themselves.
-              </p>
-              <div className="bg-gray-50 dark:bg-black/20 p-3 rounded border border-gray-100 dark:border-gray-700">
-                <div className="flex justify-between text-[8px] font-mono text-primary mb-1">
-                  <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 bg-primary rounded-full"></span> investor_access: ACTIVE</span>
-                </div>
-                <div className="h-1.5 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                  <div className="h-full bg-primary w-2/3 rounded-full"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Pipeline Timeline Section */}
+      <section className="bg-emerald-50/30 dark:bg-emerald-900/10 py-20 px-4 sm:px-8 max-w-7xl mx-auto" id="features">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="font-mono font-bold text-3xl sm:text-4xl text-deep-jungle dark:text-white mb-4">
+            From Chaos to Clarity
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300">
+            See how Cluvo turns messy customer feedback into binary validation data in three simple steps.
+          </p>
         </div>
+        <PipelineTimeline />
       </section>
 
       {/* Coming Soon Section */}
