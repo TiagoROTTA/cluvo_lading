@@ -3,7 +3,7 @@
 Landing page pour CLUVO - Plateforme de validation de demande client pour founders.
 
 ## Stack Technique
-
+ 
 - **Next.js 14** avec App Router
 - **TypeScript**
 - **Tailwind CSS** pour le styling
