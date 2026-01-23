@@ -484,6 +484,28 @@ export default function Home() {
               className="h-16 w-auto transition-transform hover:scale-110 duration-300"
             />
           </div>
+          <div className="flex items-center gap-4 text-sm">
+            <a 
+              href="/privacy" 
+              className="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors duration-300"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-gray-300 dark:text-gray-600">•</span>
+            <a 
+              href="/terms" 
+              className="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors duration-300"
+            >
+              Terms of Service
+            </a>
+            <span className="text-gray-300 dark:text-gray-600">•</span>
+            <a 
+              href="/security" 
+              className="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors duration-300"
+            >
+              Security
+            </a>
+          </div>
           <div className="font-mono text-[10px] text-gray-400">
             © 2026 CLUVO Inc.
           </div>
